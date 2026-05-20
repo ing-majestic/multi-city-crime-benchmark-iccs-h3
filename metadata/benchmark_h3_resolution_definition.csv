@@ -1,0 +1,2 @@
+h3_resolution,average_hexagon_area_km2,average_hexagon_edge_length_m,source
+9,0.105333,200.786,computed with h3 Python package average_hexagon_area/average_hexagon_edge_length

@@ -1,0 +1,120 @@
+source_label,label_es,label_en,crime_cat_std
+0101,Homicidio intencional,Intentional homicide,homicide
+0102,Tentativa de homicidio intencional,Attempted intentional homicide,homicide
+01032,Homicidio culposo,Negligent manslaughter,homicide
+010321,Homicidio por tránsito vehicular,Vehicular homicide,homicide
+010322,Homicidio no ocasionado por tránsito vehicular,Non-vehicular homicide,homicide
+0104,Suicidio asistido o incitación al suicidio,Assisting or instigating suicide,other
+0106,Feticidio ilegal,Illegal feticide,homicide
+02011,Agresión,Assault,assault
+020111,Agresión grave,Serious assault,assault
+02012,Amenaza,Threat,assault
+02021,Secuestro de menores,Abduction of a minor,assault
+02022,Privación de libertad,Deprivation of liberty,assault
+020221,Secuestro,Kidnapping,assault
+020222,Retención ilegal,Illegal restraint,assault
+020291,Adopción ilegal,Illegal adoption,assault
+020329,Otras formas de trabajo forzoso,Other forced labour,assault
+0204,Trata de personas,Trafficking in persons (TIP),assault
+0205,Coacción,Coercion,assault
+02051,Extorsión o chantaje,Extortion or blackmail,assault
+0206,Negligencia,Negligence,assault
+020611,Negligencia en situaciones de menores bajo cuidado,Negligence in situations of children under care,assault
+020619,Otras formas de negligencia en situaciones de personas bajo cuidado,Other negligence in situations of persons under care,assault
+02062,Negligencia profesional,Professional negligence,assault
+02063,Negligencia relacionada con la conducción de un vehículo,Negligence related to driving a vehicle,assault
+02069,Otros actos de negligencia,Other acts of negligence,assault
+02071,Actos que ponen en peligro la salud,Acts that endanger health,assault
+0208,Actos dirigidos a inducir miedo o angustia emocional,Acts intended to induce fear or emotional distress,assault
+02082,Acoso,Stalking,assault
+0209,Difamación o insulto,Defamation or insult,other
+0210,Discriminación,Discrimination,other
+02111,Invasión de la intimidad,Invasion of privacy,other
+02119,Otras transgresiones contra las personas,Other acts that trespass against the person,other
+0301,Violencia sexual,Sexual violence,sexual_offense
+03011,Violación,Rape,sexual_offense
+030113,Violación por presunción legal,Statutory rape,sexual_offense
+03012,Agresión sexual,Sexual assault,sexual_offense
+030122,Agresión sexual no física,Non-physical sexual assault,sexual_offense
+030129,Otros actos de agresión sexual no clasificados en otra parte,Other sexual assault not elsewhere classified,sexual_offense
+03021,Explotación sexual de adultos,Sexual exploitation of adults,sexual_offense
+03022,Explotación sexual de menores,Sexual exploitation of children,sexual_offense
+030221,Pornografía infantil,Child pornography,sexual_offense
+0309,Otros actos lesivos de naturaleza sexual,Other injurious acts of a sexual nature,sexual_offense
+0401,Robo,Robbery,robbery
+04011,Robo a personas,Robbery from the person,robbery
+040111,Robo a personas en lugares públicos,Robbery from the person in a public location,robbery
+040112,Robo a personas en lugares privados,Robbery from the person in a private location,robbery
+04012,Robo de objetos de valor o bienes en tránsito,Robbery of valuables or goods in transit,robbery
+040121,Robo de automóviles o vehículos,Robbery of a car or vehicle,robbery
+040129,Otras formas de robo de objetos de valor o bienes en tránsito,Other robbery of valuables or goods in transit,robbery
+040131,Robo a instituciones financieras,Robbery of a financial institution,robbery
+040132,Robo a instituciones no financieras,Robbery of a non-financial institution,robbery
+04019,Otros actos de robo,Other acts of robbery,robbery
+0501,Robo con entrada ilícita,Burglary,burglary
+05011,Robo con entrada ilícita en locales comerciales,Burglary of business premises,burglary
+05012,Robo con entrada ilícita en domicilios particulares,Burglary of private residential premises,burglary
+05013,Robo con entrada ilícita en locales públicos,Burglary of public premises,burglary
+0502,Hurto,Theft,theft_larceny
+05021,Hurto de vehículos de motor o de sus piezas,Theft of a motorized vehicle or parts thereof,vehicle_crime
+050211,Hurto de vehículos terrestres de motor,Theft of a motorized land vehicle,vehicle_crime
+050213,Hurto de piezas de vehículos terrestres de motor,Theft of parts of a motorized land vehicle,vehicle_crime
+050221,Hurto de bienes personales a una persona,Theft of personal property from a person,theft_larceny
+050222,Hurto de bienes personales de un vehículo,Theft of personal property from a vehicle,theft_larceny
+050229,Otras formas de hurto de bienes personales,Other theft of personal property,theft_larceny
+050231,Hurto en tiendas,Theft from a shop,theft_larceny
+050239,Otras formas de hurto de bienes comerciales,Other theft of business property,theft_larceny
+05025,Hurto de ganado,Theft of livestock,theft_larceny
+05026,Hurto de servicios,Theft of services,theft_larceny
+05029,Otros actos de hurto,Other acts of theft,theft_larceny
+0504,Daños a la propiedad,Property damage,other
+05042,Daños a bienes personales,Damage of personal property,other
+05043,Daños a bienes comerciales,Damage of business property,other
+05049,Otros daños a bienes,Other damage of property,other
+0509,Otros actos contra la propiedad solamente,Other acts against property only,other
+0601,Actos ilícitos relacionados con drogas o precursores sujetos a fiscalización,Unlawful acts involving controlled drugs or precursors,drug_offense
+060111,"Posesión, adquisición o uso ilícitos de drogas sujetas a fiscalización para consumo personal","Unlawful possession, purchase or use of controlled drugs for personal consumption",drug_offense
+060121,Tráfico ilícito de drogas sujetas a fiscalización no destinadas al consumo personal,Unlawful trafficking of controlled drugs not for personal consumption,drug_offense
+06019,Otros actos ilícitos relacionados con drogas o precursores sujetos a fiscalización,Other unlawful acts involving controlled drugs or precursors,drug_offense
+06021,"Producción, manipulación, posesión o uso ilícitos de productos alcohólicos","Unlawful production, handling, possession or use of alcohol products",public_order
+0701,Fraude,Fraud,fraud
+07019,Otros actos de fraude,Other acts of fraud,fraud
+07023,Actos de falsificación de documentos,Acts of forgery/counterfeiting documents,fraud
+07029,Otros actos de falsificación,Other acts of forgery/counterfeiting,fraud
+07031,Soborno,Bribery,fraud
+07032,Malversación o peculado,Embezzlement,fraud
+07033,Abuso de funciones,Abuse of functions,fraud
+07034,Tráfico de influencias,Trading in influence,fraud
+07035,Enriquecimiento ilícito,Illicit enrichment,fraud
+07039,Otros actos de corrupción,Other acts of corruption,fraud
+07041,Blanqueo de dinero,Money laundering,fraud
+07049,Otros actos relacionados con el producto del delito,Other acts involving the proceeds of crime,fraud
+0801,Actos contrarios a las normas de conducta orientadas al mantenimiento del orden público,Acts against public order behavioural standards,public_order
+08011,Delitos relacionados con la alteración violenta del orden público,Violent public disorder offences,public_order
+08012,Actos relacionados con las normas y preceptos sociales y religiosos orientados al mantenimiento del orden público,Acts related to social and religious public order norms and standards,public_order
+08019,Otros actos contrarios a las normas de conducta orientadas al mantenimiento del orden público,Other acts against public order behavioural standards,public_order
+08021,Delitos de prostitución,Prostitution offences,sexual_offense
+08022,Delitos de pornografía,Pornography offences,sexual_offense
+08029,Otros actos contrarios a las normas de conducta sexual orientadas al mantenimiento del orden público,Other acts against public order sexual standards,sexual_offense
+08032,Actos relacionados con expresiones de creencias y normas sociales controladas,Acts related to expressions of controlled social beliefs and norms,public_order
+08043,Actos contrarios a las disposiciones sobre apuestas,Acts against regulations on betting,public_order
+0805,Actos relacionados con la migración,Acts related to migration,public_order
+08061,Obstrucción de la justicia,Obstruction of justice,public_order
+08062,Incumplimiento de órdenes judiciales,Breach of justice order,public_order
+08063,Intención delictiva,Criminal intent,public_order
+08069,Otros actos contra el sistema de justicia,Other acts against the justice system,public_order
+08079,Otros actos relacionados con las elecciones democráticas,Other acts related to democratic elections,public_order
+0809,"Otros actos contra el orden público, la autoridad y las disposiciones del Estado","Other acts against public order, authority and provisions of the State",other
+09011,Posesión o uso de armas y explosivos,Possession or use of weapons and explosives,public_order
+090111,Posesión o uso ilícitos de armas de fuego,Unlawful possession or use of firearms,public_order
+090112,Posesión o uso ilícitos de otras armas o explosivos,Unlawful possession or use of other weapons or explosives,public_order
+0904,Actos contra la seguridad del Estado,Acts against state security,public_order
+09051,Participación en un grupo delictivo organizado,Participation in an organized criminal group,public_order
+1001,Actos que causan contaminación o degradación del medio ambiente,Acts that cause environmental pollution or degradation,other
+10041,Tala ilegal,Illegal logging,other
+10049,Otros actos que provocan el agotamiento o la degradación de los recursos naturales,Other acts that result in the depletion or degradation of natural resources,other
+10091,Actos contra los animales,Acts against animals,other
+10099,Otros actos contra el entorno natural,Other acts against the natural environment,other
+11011,Tortura,Torture,other
+1102,Actos contrarios a las leyes u otras disposiciones sobre menores,Acts contrary to youth regulations and acts on minors,other
+1109,Otros actos delictivos no clasificados en otra parte,Other criminal acts not elsewhere classified,other

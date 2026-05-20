@@ -1,0 +1,13 @@
+feature,type,definition,granularity
+event_count,target,Raw count of mapped criminal incidents in an observed H3 cell-time window.,"daily, monthly"
+z_lag1,temporal lag,Normalized lag of the previous time window fitted using training data only.,"daily, monthly"
+z_lag2,temporal lag,Normalized lag of the second previous time window fitted using training data only.,"daily, monthly"
+z_lag12,seasonal lag,Normalized seasonal lag t-12; used in monthly benchmark features.,monthly
+delta_z1,lag difference,First-order difference in normalized lagged signal.,"daily, monthly"
+delta_z12,seasonal difference,Seasonal difference in normalized lagged signal.,monthly
+centrality,spatial/contextual,Spatial context feature included in the integrated H3 feature table.,"daily, monthly"
+summary_corr_CDMX_daily,audit statistic,"Feature-target correlations from nb04: z_lag1=0.104, z_lag12=nan, delta_z1=0.002.",daily
+summary_corr_CHICAGO_daily,audit statistic,"Feature-target correlations from nb04: z_lag1=0.137, z_lag12=nan, delta_z1=0.004.",daily
+summary_corr_CDMX_monthly,audit statistic,"Feature-target correlations from nb04: z_lag1=0.473, z_lag12=0.426, delta_z1=0.004.",monthly
+summary_corr_CHICAGO_monthly,audit statistic,"Feature-target correlations from nb04: z_lag1=0.609, z_lag12=0.585, delta_z1=0.01.",monthly
+summary_corr_LONDON_monthly,audit statistic,"Feature-target correlations from nb04: z_lag1=0.551, z_lag12=0.514, delta_z1=0.004.",monthly

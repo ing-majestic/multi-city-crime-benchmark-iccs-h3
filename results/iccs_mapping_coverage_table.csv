@@ -1,0 +1,5 @@
+ciudad,registros_totales,mapeados_directo,mapeados_fuzzy,total_mapeados,no_mapeados,pct_cobertura,codigos_iccs_unicos,categorias_no_mapeadas,procesamiento_paralelo
+CDMX,1912995,1865277,0,1865277,47718,97.5055867893016,108,20,False
+CHICAGO,8142909,8142684,0,8142684,225,99.9972368597021,30,3,False
+LONDON,8062260,8062260,0,8062260,0,100.0,13,0,False
+TOTAL,18118164,18070221,0,18070221,47943,99.73538709551364,119,-,-

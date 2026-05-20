@@ -1,0 +1,4 @@
+city,initial_records,final_records_after_cleaning,removed_records,retention_pct,duplicates_removed,critical_nulls_removed,deduplication_rule,invalid_record_rule
+CDMX,2098743,1912997,185746,91.149655,39657,146089,synthetic fingerprint: timestamp + latitude + longitude + crime category,"exclude records with missing/invalid timestamp, coordinates, or category"
+CHICAGO,8335148,8144911,190237,97.717653,0,190237,native unique ID,"exclude records with missing/invalid timestamp, coordinates, or category"
+LONDON,8558930,8077572,481358,94.375956,352022,129336,native Crime ID,"exclude records with missing/invalid timestamp, coordinates, or category"
