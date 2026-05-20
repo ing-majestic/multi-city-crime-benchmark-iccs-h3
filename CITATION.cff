@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this benchmark package, please cite the archived release."
 title: "Multi-city crime benchmark with ICCS harmonization and H3 spatial indexing"
 version: "1.0.0"
-date-released: "2026-05-18"
+date-released: "2026-05-20"
 authors:
   - family-names: "Perez Gomez"
     given-names: "Martin Heriberto"
@@ -10,5 +10,5 @@ authors:
     given-names: "Jose Giovanni"
   - family-names: "Torres Ruiz"
     given-names: "Miguel Jesus"
-repository-code: "TO_BE_ADDED_AFTER_GITHUB_REPOSITORY_IS_CREATED"
+repository-code: "https://github.com/ing-majestic/multi-city-crime-benchmark-iccs-h3"
 license: "MIT"

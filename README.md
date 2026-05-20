@@ -47,8 +47,11 @@ pytest
 
 ## Citation
 
-Please cite the archived release using the metadata in `CITATION.cff`. Once a
-Zenodo DOI is created, update this README and the manuscript availability
+Please cite the archived release using the metadata in `CITATION.cff`.
+
+GitHub repository: https://github.com/ing-majestic/multi-city-crime-benchmark-iccs-h3
+
+Once a Zenodo DOI is created, update this README and the manuscript availability
 statement with the DOI URL.
 
 ## License
