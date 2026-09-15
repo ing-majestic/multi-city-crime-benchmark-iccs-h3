@@ -1,5 +1,0 @@
-concept,definition,artifact
-ICCS coverage denominator,records after cleaning/harmonization entering Notebook 03 ICCS coding,05_results_final/tables/03_iccs_mapping_summary.csv; 05_results_final/reports/03_iccs_report.md
-ICCS coverage numerator,records assigned a non-null ICCS code by direct catalog mapping or fuzzy matching,03_iccs_mapping_summary.csv
-Unmapped records,records retained in the audit as not mapped to ICCS; mostly non-criminal or undefined categories depending on city,03_iccs_report.md
-Coverage scope,"record-level coverage, not category-level coverage",FULL_THESIS_WORKSPACE\07_pipeline\reproducible\outputs\tables\phase_01_04_dataset_audit.csv

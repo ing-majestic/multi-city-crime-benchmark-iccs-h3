@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "review_authority": "scientific-review/manuscript-audit@625f1ec148f1158582b96d3e32924ada492a2c16",
+  "writer_authority": "scientific-product/art01-writer-r01@41f54ac3c7d0b18d8366e48a4f1e91733f32f57f",
+  "exact_git_blobs": {
+    "english_manuscript": "e9a2ad6651708ea9260547ce971ec313bad7e2ac",
+    "bibliography": "4ef6f740b2ceacc81070fb4a95bd408c7cc852fb",
+    "spanish_companion": "a9b29673532844241dab5c253ae006f5f751d056",
+    "bilingual_manifest": "42fd1765394bb833d2c3d28017fb21fd624fb00b",
+    "translation_notes": "acdc3e50ea308647eaf15b6cbb32968b20bb0316",
+    "public_provenance_map": "e31b01459342db29579974cf6f78621dc718760b",
+    "table_data_coverage": "4b3b79b080f252ae716f6997db174e05bdd92870",
+    "table_benchmark": "997b48ffc9a3258dad5e407f2c1e0a88e9addc2b",
+    "table_local_performance": "4bc58e2df8d7ada0164ac00bedda6b4f94a03eee",
+    "figure_h3": "99f587ef0598b7b4da83210481ea0175b8fd3ee1",
+    "m1m2_numeric_manifest": "27235c65d95ac4d0bf8e216a0c25b59032af28e2",
+    "m7_numeric_manifest": "bd0f5f9395c5342f1c20951085595988bc5e07ac"
+  },
+  "authoritative_english_pdf": {
+    "actions_run": 34952490484,
+    "artifact_id": 10389389811,
+    "pages": 7,
+    "bytes": 192429,
+    "sha256": "f0fa0f0bb8cf69a0729d0ec5a84499255357e3cbc9e96ab3af7b7c74263f4dab"
+  },
+  "spanish_pdf": {
+    "status": "PASS_DETERMINISTIC_COMPANION_PREPARED_LOCALLY",
+    "source_blob": "a9b29673532844241dab5c253ae006f5f751d056",
+    "sha256": "ec24df4dee01af77868fe19184bbc4afbeecfdfd9614a65f9b3b08945ce00047",
+    "pages": 11,
+    "note": "camera-ready companion; public inclusion decision remains subject to independent audit"
+  },
+  "science_lock": {
+    "science_changed": false,
+    "final_test_2024": "CLOSED",
+    "m8_results_consumed": 0,
+    "m9_results_consumed": 0,
+    "m10_results_consumed": 0
+  }
+}

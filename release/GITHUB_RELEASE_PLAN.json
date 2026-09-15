@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "version": "v1.0.0",
+  "state": "PREPARED_FOR_INDEPENDENT_AUDIT",
+  "tag_created": false,
+  "github_release_created": false,
+  "publish_allowed": false,
+  "publish_gate": "OPS-R06-ART01-CAMERA-READY-PACKAGE-AUDIT-001 PASS",
+  "doi": null
+}

@@ -1,0 +1,4 @@
+city,processed_records,iccs_mapped_records,iccs_mapping_percent,raw_records,criminal_eligible_records,criminal_eligibility_percent,h3_r9_center_cells
+CDMX,1912995,1865277,97.50558678930159,2098743,2038707,97.1394306020318,12249
+CHICAGO,8142909,8142684,99.9972368597021,8335148,8334911,99.9971566191746,5641
+LONDON,8062260,8062260,100.0,8558930,8558930,100.0,16890

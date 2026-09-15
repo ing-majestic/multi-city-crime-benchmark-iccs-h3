@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "public aggregate release candidate",
+  "upstream_review_authority": "scientific-review/manuscript-audit@625f1ec148f1158582b96d3e32924ada492a2c16",
+  "upstream_writer_authority": "scientific-product/art01-writer-r01@41f54ac3c7d0b18d8366e48a4f1e91733f32f57f",
+  "upstream_private_provenance_blob": "e31b01459342db29579974cf6f78621dc718760b",
+  "objects": {
+    "data_coverage": {
+      "file": "tables/source/data_coverage.csv",
+      "reviewed_export_blob": "4b3b79b080f252ae716f6997db174e05bdd92870",
+      "upstream_manifest_blob": "27235c65d95ac4d0bf8e216a0c25b59032af28e2"
+    },
+    "h3_support": {
+      "file": "tables/source/h3_boundary_support.csv",
+      "reviewed_export_blob": "99f587ef0598b7b4da83210481ea0175b8fd3ee1",
+      "upstream_manifest_blob": "27235c65d95ac4d0bf8e216a0c25b59032af28e2"
+    },
+    "benchmark_macro_mae": {
+      "file": "tables/source/benchmark_macro_mae.csv",
+      "reviewed_export_blob": "997b48ffc9a3258dad5e407f2c1e0a88e9addc2b",
+      "upstream_manifest_blob": "bd0f5f9395c5342f1c20951085595988bc5e07ac"
+    },
+    "local_performance": {
+      "file": "tables/source/local_performance.csv",
+      "reviewed_export_blob": "4bc58e2df8d7ada0164ac00bedda6b4f94a03eee",
+      "upstream_manifest_blob": "bd0f5f9395c5342f1c20951085595988bc5e07ac"
+    }
+  },
+  "guards": {
+    "final_test_2024": "CLOSED",
+    "science_changed": false,
+    "m8_results_consumed": 0,
+    "m9_results_consumed": 0,
+    "m10_results_consumed": 0
+  }
+}

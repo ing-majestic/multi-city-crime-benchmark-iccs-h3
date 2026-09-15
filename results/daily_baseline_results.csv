@@ -1,7 +1,0 @@
-city,granularity,model,test_mae,test_rmse,test_r2,canonical_role,audit_status
-CDMX,daily,GLM,0.216798,0.440232,0.017824,,ok
-CDMX,daily,RF,0.204887,0.431711,0.055479,best_predictive_baseline,ok
-CDMX,daily,XGBoost,0.201175,0.43265,0.051366,transfer_compatible_baseline,ok
-Chicago,daily,GLM,0.354656,0.550028,0.010966,,ok
-Chicago,daily,RF,0.346799,0.53408,0.067489,best_predictive_baseline,ok
-Chicago,daily,XGBoost,0.350697,0.539083,0.049939,transfer_compatible_baseline,ok

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "python": "3.13.5",
+  "dependencies": [],
+  "scope": "public deterministic generators only"
+}

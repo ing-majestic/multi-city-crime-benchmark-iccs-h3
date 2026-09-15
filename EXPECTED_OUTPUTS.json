@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "generated": [
+    "tables/export/tab_art01_data_coverage.tex",
+    "tables/export/tab_art01_benchmark.tex",
+    "tables/export/tab_art01_local_performance.tex",
+    "figures/export/h3_boundary_support.svg",
+    "figures/export/benchmark_workflow.svg",
+    "figures/export/temporal_validation.svg"
+  ],
+  "note": "SVG workflow/temporal exports are candidates only; reviewed inline manuscript figures are not replaced before independent equivalence audit."
+}

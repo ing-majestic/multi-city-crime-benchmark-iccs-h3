@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "state": "PUBLIC_RELEASE_PREPARED_PENDING_R06_5",
+  "planned_version": "1.0.0",
+  "target_repository": "ing-majestic/multi-city-crime-benchmark-iccs-h3",
+  "target_branch": "release/art01-current-reproducibility-r01",
+  "allowlist": "PUBLIC_ALLOWLIST.txt",
+  "raw_data_redistributed": false,
+  "final_test_2024": "CLOSED",
+  "github_release_created": false,
+  "zenodo_record_created": false,
+  "doi": null,
+  "durable_sync_preparation": "payload_verified_before_sync_2026-09-15"
+}

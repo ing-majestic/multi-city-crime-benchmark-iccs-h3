@@ -1,0 +1,52 @@
+\begin{table*}[!t]
+\centering
+\caption{Macro mean MAE over the 2021--2023 validation folds. Values are descriptive within each benchmark family; the 2024 held-out final-test period is not used.}
+\label{tab:art01-benchmark}
+\scriptsize
+\begin{tabular}{llr}
+\toprule
+Benchmark family & Comparator & Macro MAE \\
+\midrule
+CDMX daily & Zero predictor & 0.115158 \\
+ & Lag-1 persistence & 0.169035 \\
+ & Seasonal naive & 0.169891 \\
+ & Poisson GLM & 0.205083 \\
+ & Negative Binomial NB2 & 4.998229 \\
+ & Random Forest (Poisson) & 0.162925 \\
+ & XGBoost (count:poisson) & 0.1629 \\
+\addlinespace
+Chicago daily & Zero predictor & 0.363526 \\
+ & Lag-1 persistence & 0.461664 \\
+ & Seasonal naive & 0.469464 \\
+ & Poisson GLM & 0.556433 \\
+ & Negative Binomial NB2 & 30.088494 \\
+ & Random Forest (Poisson) & 0.423932 \\
+ & XGBoost (count:poisson) & 0.423876 \\
+\addlinespace
+CDMX monthly view & Zero predictor & 3.502722 \\
+ & Lag-1 persistence & 1.46654 \\
+ & Seasonal naive & 1.596154 \\
+ & Poisson GLM & 3.106333 \\
+ & Negative Binomial NB2 & 1180.146345 \\
+ & Random Forest (Poisson) & 1.171765 \\
+ & XGBoost (count:poisson) & 1.1753 \\
+\addlinespace
+Chicago monthly view & Zero predictor & 11.057238 \\
+ & Lag-1 persistence & 3.708728 \\
+ & Seasonal naive & 4.428135 \\
+ & Poisson GLM & 7.280859 \\
+ & Negative Binomial NB2 & 9321.191158 \\
+ & Random Forest (Poisson) & 3.11828 \\
+ & XGBoost (count:poisson) & 3.128891 \\
+\addlinespace
+London monthly native & Zero predictor & 15.166586 \\
+ & Lag-1 persistence & 4.241117 \\
+ & Seasonal naive & 5.575268 \\
+ & Poisson GLM & 26.075018 \\
+ & Negative Binomial NB2 & 6.6209e+9 \\
+ & Random Forest (Poisson) & 3.615495 \\
+ & XGBoost (count:poisson) & 3.84133 \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table*}

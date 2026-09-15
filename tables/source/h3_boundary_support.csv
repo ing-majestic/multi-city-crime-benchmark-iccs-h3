@@ -1,0 +1,4 @@
+city,resolution,full_cells,center_cells,overlap_cells,selected_policy,h3_version
+CDMX,9,11908,12249,12609,center,4.4.2
+CHICAGO,9,5226,5641,6053,center,4.4.2
+LONDON,9,16413,16890,17342,center,4.4.2

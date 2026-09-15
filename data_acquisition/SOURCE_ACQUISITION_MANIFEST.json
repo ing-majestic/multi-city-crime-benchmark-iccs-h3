@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "snapshot_identity_audit_generated_utc": "2026-07-24T00:27:18.154780+00:00",
+  "sources": [
+    {
+      "id": "cdmx_raw",
+      "official_url": "https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+      "snapshot_bytes": 559894090,
+      "snapshot_sha256": "6335d8802459f0d7fe1cd66e0402674ada6ead0f5f609952b40c82e90f64134c",
+      "redistributed": false
+    },
+    {
+      "id": "chicago_raw",
+      "official_url": "https://catalog.data.gov/dataset/crimes-2001-to-present",
+      "snapshot_bytes": 1969513312,
+      "snapshot_sha256": "5ad9073281597ff9e00830117e25fab7d7700eb63258ba54bb9a9afb108dc92d",
+      "redistributed": false
+    },
+    {
+      "id": "london_raw",
+      "official_url": "https://data.police.uk/data/archive/",
+      "secondary_metadata_url": "https://ckan.publishing.service.gov.uk/dataset/england-national-crime-mapping",
+      "snapshot_bytes": 2532070153,
+      "snapshot_sha256": "0677a5544157d0fcd4683636319aa7e29464ccabf382fbf4b244d8154b34eeeb",
+      "redistributed": false
+    },
+    {
+      "id": "iccs_mapping_catalog_private_snapshot",
+      "framework_url": "https://www.unodc.org/documents/data-and-analysis/statistics/crime/ICCS/ICCS_English_2016_web.pdf",
+      "snapshot_bytes": 86937,
+      "snapshot_sha256": "8d509476fcc1953367129db2da087eecd9a21af83a8b646c392680af6d0c51be",
+      "redistributed": false,
+      "note": "hash-bound only; excluded from public payload pending rights audit"
+    }
+  ]
+}

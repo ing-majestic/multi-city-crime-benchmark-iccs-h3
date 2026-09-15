@@ -1,0 +1,1 @@
+Administrative sources -> temporal/taxonomy eligibility -> H3 support and complete panel -> causal lag/rolling features -> rolling-origin validation -> Poisson/NB2/RF-Poisson/XGB-Poisson + naive controls -> validated benchmark results -> manuscript tables and figures
