@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-09-15",
+  "raw_municipal_records": {
+    "class": "DR-0",
+    "decision": "DO_NOT_REDISTRIBUTE",
+    "included": false
+  },
+  "processed_record_level_derivatives": {
+    "class": "DR-1",
+    "decision": "HOLD_NOT_RELEASED",
+    "included": false
+  },
+  "aggregated_reviewed_outputs": {
+    "class": "DR-2",
+    "decision": "RELEASE_CANDIDATE_PENDING_INDEPENDENT_AUDIT",
+    "included": true
+  },
+  "synthetic_example": {
+    "class": "DR-3",
+    "decision": "NOT_REQUIRED_FOR_BOUNDED_ARTIFACT_VERIFICATION",
+    "included": false
+  },
+  "final_test_2024": {
+    "status": "CLOSED",
+    "released_results": false
+  }
+}
