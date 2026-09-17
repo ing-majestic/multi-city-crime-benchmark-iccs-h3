@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "article": "ART-01",
+  "sources": [
+    {
+      "id": "SRC-CDMX-001",
+      "name": "Mexico City investigation records",
+      "publisher": "Fiscalia General de Justicia de la Ciudad de Mexico via Portal de Datos Abiertos CDMX",
+      "official_url": "https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+      "source_snapshot_sha256": "6335d8802459f0d7fe1cd66e0402674ada6ead0f5f609952b40c82e90f64134c",
+      "license_or_terms": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "raw_data_redistributed": false,
+      "public_use": "Reviewed aggregate outputs only."
+    },
+    {
+      "id": "SRC-CHI-001",
+      "name": "Crimes - 2001 to Present",
+      "publisher": "Chicago Police Department / City of Chicago Data Portal",
+      "official_url": "https://data.cityofchicago.org/d/ijzp-q8t2",
+      "catalog_url": "https://catalog.data.gov/dataset/crimes-2001-to-present",
+      "source_snapshot_sha256": "5ad9073281597ff9e00830117e25fab7d7700eb63258ba54bb9a9afb108dc92d",
+      "license_or_terms": "CITY_OF_CHICAGO_DATA_PORTAL_TERMS_OF_USE",
+      "terms_url": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+      "open_license_identifier_asserted": false,
+      "raw_data_redistributed": false,
+      "public_use": "Reviewed aggregate outputs only; source terms remain applicable."
+    },
+    {
+      "id": "SRC-LON-001",
+      "name": "Police data archive",
+      "publisher": "UK police forces via data.police.uk",
+      "official_url": "https://data.police.uk/data/archive/",
+      "source_snapshot_sha256": "0677a5544157d0fcd4683636319aa7e29464ccabf382fbf4b244d8154b34eeeb",
+      "license_or_terms": "OGL-3.0",
+      "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "raw_data_redistributed": false,
+      "public_use": "Reviewed aggregate outputs only."
+    },
+    {
+      "id": "SRC-ICCS-001",
+      "name": "International Classification of Crime for Statistical Purposes (ICCS)",
+      "publisher": "United Nations Office on Drugs and Crime (UNODC)",
+      "official_url": "https://www.unodc.org/documents/data-and-analysis/statistics/crime/ICCS/ICCS_English_2016_web.pdf",
+      "source_snapshot_sha256": "8d509476fcc1953367129db2da087eecd9a21af83a8b646c392680af6d0c51be",
+      "license_or_terms": "NO_REUSE_LICENSE_ASSERTED",
+      "raw_or_mapping_content_redistributed": false,
+      "public_use": "Framework attribution and aggregate measurements only; ICCS publication, taxonomy rows and private mapping rows are not redistributed."
+    }
+  ]
+}
