@@ -10,4 +10,6 @@ Mandatory controls are zero, lag-1 persistence and seasonal naive. Evaluated lea
 
 Raw municipal records and processed record-level derivatives are not redistributed. The package is bounded to deterministic artifact-level regeneration and verification from reviewed aggregate inputs.
 
-Planned archival version: `v1.0.0`. No tag, GitHub Release, Zenodo archive, DOI, publication date, volume or issue is asserted by this candidate.
+Rights and licensing are intentionally split by artifact class. Software is covered by the root MIT `LICENSE`; repository-authored documentation/figures and the scoped treatment of aggregate outputs are described in `LICENSE-DATA-DOCS.md`; source-by-source permissions, attribution obligations, and exclusions are recorded in `LICENSE_AND_RIGHTS_AUDIT.md` and `data_acquisition/SOURCE_ACQUISITION_MANIFEST.json`. Repository licenses do not relicense third-party source data or UNODC ICCS content.
+
+Planned archival version: `v1.0.0`. No tag, GitHub Release, Zenodo archive, DOI, publication date, volume or issue is asserted by this candidate. Release remains locked pending bounded R06.5 re-audit.
