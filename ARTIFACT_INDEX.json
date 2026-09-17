@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "article": "ART-01",
+  "repository": "ing-majestic/multi-city-crime-benchmark-iccs-h3",
+  "purpose": "Stable public identifiers for manuscript-linked reproducibility artifacts.",
+  "identifier_policy": {
+    "format": "ART01-<CLASS>-<NNN>",
+    "classes": {
+      "DATA": "machine-readable reviewed aggregate data",
+      "TBL": "publication table and source data",
+      "FIG": "publication or explanatory figure and editable source",
+      "PROV": "provenance and source lineage",
+      "REPRO": "reproducibility and verification material",
+      "RIGHTS": "rights and licensing material"
+    },
+    "stability_rule": "Identifiers are public-facing and must not encode internal workstreams, agents, gates, review cycles, local paths, or implementation-only names."
+  },
+  "artifacts": [
+    {
+      "id": "ART01-DATA-001",
+      "title": "Multi-city data coverage summary",
+      "source": "tables/source/data_coverage.csv",
+      "generated": "tables/export/tab_art01_data_coverage.tex",
+      "provenance": "provenance/PUBLIC_PROVENANCE_MAP.json",
+      "scope": "Reviewed aggregate coverage values only; no raw municipal records."
+    },
+    {
+      "id": "ART01-DATA-002",
+      "title": "H3 resolution-9 boundary support summary",
+      "source": "tables/source/h3_boundary_support.csv",
+      "generated": "figures/export/h3_boundary_support.svg",
+      "provenance": "provenance/PUBLIC_PROVENANCE_MAP.json",
+      "scope": "Reviewed aggregate spatial-support values."
+    },
+    {
+      "id": "ART01-DATA-003",
+      "title": "Benchmark macro-MAE validation surface",
+      "source": "tables/source/benchmark_macro_mae.csv",
+      "generated": "tables/export/tab_art01_benchmark.tex",
+      "provenance": "provenance/PUBLIC_PROVENANCE_MAP.json",
+      "scope": "Validation folds 2021-2023; 2024 remains held out."
+    },
+    {
+      "id": "ART01-DATA-004",
+      "title": "Local within-family performance summary",
+      "source": "tables/source/local_performance.csv",
+      "generated": "tables/export/tab_art01_local_performance.tex",
+      "provenance": "provenance/PUBLIC_PROVENANCE_MAP.json",
+      "scope": "Reviewed within-family validation summary."
+    },
+    {
+      "id": "ART01-TBL-001",
+      "title": "Data coverage table",
+      "source": "tables/source/data_coverage.csv",
+      "generated": "tables/export/tab_art01_data_coverage.tex",
+      "derived_from": "ART01-DATA-001"
+    },
+    {
+      "id": "ART01-TBL-002",
+      "title": "Benchmark performance table",
+      "source": "tables/source/benchmark_macro_mae.csv",
+      "generated": "tables/export/tab_art01_benchmark.tex",
+      "derived_from": "ART01-DATA-003"
+    },
+    {
+      "id": "ART01-TBL-003",
+      "title": "Local performance table",
+      "source": "tables/source/local_performance.csv",
+      "generated": "tables/export/tab_art01_local_performance.tex",
+      "derived_from": "ART01-DATA-004"
+    },
+    {
+      "id": "ART01-FIG-001",
+      "title": "Benchmark workflow",
+      "source": "figures/source/benchmark_workflow.txt",
+      "generated": "figures/export/benchmark_workflow.svg",
+      "scope": "Qualitative workflow; no unsupported quantitative values."
+    },
+    {
+      "id": "ART01-FIG-002",
+      "title": "Rolling-origin temporal validation",
+      "source": "figures/source/temporal_validation.txt",
+      "generated": "figures/export/temporal_validation.svg",
+      "scope": "Validation folds 2021-2023; 2024 remains closed."
+    },
+    {
+      "id": "ART01-FIG-003",
+      "title": "H3 boundary support",
+      "source": "tables/source/h3_boundary_support.csv",
+      "generated": "figures/export/h3_boundary_support.svg",
+      "derived_from": "ART01-DATA-002"
+    },
+    {
+      "id": "ART01-PROV-001",
+      "title": "Public provenance map",
+      "path": "provenance/PUBLIC_PROVENANCE_MAP.json"
+    },
+    {
+      "id": "ART01-PROV-002",
+      "title": "Source acquisition and rights evidence",
+      "path": "data_acquisition/SOURCE_ACQUISITION_MANIFEST.json"
+    },
+    {
+      "id": "ART01-REPRO-001",
+      "title": "Reproducibility instructions",
+      "path": "REPRODUCIBILITY_README.md"
+    },
+    {
+      "id": "ART01-REPRO-002",
+      "title": "Deterministic public asset renderer",
+      "path": "scripts/render_public_assets.py"
+    },
+    {
+      "id": "ART01-REPRO-003",
+      "title": "Release verification script",
+      "path": "scripts/verify_release.py"
+    },
+    {
+      "id": "ART01-REPRO-004",
+      "title": "Cryptographic checksum manifest",
+      "path": "SHA256SUMS.txt"
+    },
+    {
+      "id": "ART01-RIGHTS-001",
+      "title": "Rights and licensing audit",
+      "path": "LICENSE_AND_RIGHTS_AUDIT.md"
+    },
+    {
+      "id": "ART01-RIGHTS-002",
+      "title": "Data, documentation and figure licensing scope",
+      "path": "LICENSE-DATA-DOCS.md"
+    }
+  ]
+}
