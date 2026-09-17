@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "article": "ART-01",
+  "raw_municipal_records": {
+    "included": false,
+    "availability": "Obtain from the official source portals listed in SOURCE_MANIFEST.json."
+  },
+  "processed_record_level_derivatives": {
+    "included": false,
+    "availability": "Not redistributed in this public package."
+  },
+  "reviewed_aggregate_outputs": {
+    "included": true,
+    "scope": "Machine-readable aggregate inputs used to regenerate the public tables and figures listed in ARTIFACT_INDEX.json."
+  },
+  "final_test_2024": {
+    "status": "CLOSED",
+    "released_results": false
+  }
+}
