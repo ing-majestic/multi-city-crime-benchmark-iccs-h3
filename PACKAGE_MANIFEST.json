@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "article": "ART-01",
+  "repository": "ing-majestic/multi-city-crime-benchmark-iccs-h3",
+  "package_scope": "Public reproducibility package for the benchmark article",
+  "artifact_index": "ARTIFACT_INDEX.json",
+  "provenance": "PROVENANCE.json",
+  "source_manifest": "SOURCE_MANIFEST.json",
+  "reproducibility_instructions": "REPRODUCIBILITY.md",
+  "integrity_manifest": "SHA256SUMS.txt",
+  "raw_municipal_data_included": false,
+  "processed_record_level_data_included": false,
+  "reviewed_aggregate_outputs_included": true,
+  "final_test_2024": "CLOSED",
+  "archival_release": {
+    "tag": null,
+    "doi": null,
+    "status": "NOT_YET_ASSIGNED"
+  }
+}
