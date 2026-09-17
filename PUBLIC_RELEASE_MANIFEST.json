@@ -1,14 +1,21 @@
 {
-  "schema_version": 1,
-  "state": "PUBLIC_RELEASE_PREPARED_PENDING_R06_5",
+  "schema_version": 2,
+  "state": "PUBLIC_RELEASE_REMEDIATED_PENDING_BOUNDED_R06_5_REAUDIT",
   "planned_version": "1.0.0",
   "target_repository": "ing-majestic/multi-city-crime-benchmark-iccs-h3",
   "target_branch": "release/art01-current-reproducibility-r01",
   "allowlist": "PUBLIC_ALLOWLIST.txt",
+  "rights_record": "LICENSE_AND_RIGHTS_AUDIT.md",
+  "data_docs_license_record": "LICENSE-DATA-DOCS.md",
+  "source_rights_manifest": "data_acquisition/SOURCE_ACQUISITION_MANIFEST.json",
   "raw_data_redistributed": false,
+  "processed_record_level_derivatives_redistributed": false,
   "final_test_2024": "CLOSED",
+  "r06_5_f001_remediation": "PREPARED_FOR_BOUNDED_REAUDIT",
+  "r06_5_f002_remediation": "PREPARED_FOR_BOUNDED_REAUDIT",
   "github_release_created": false,
   "zenodo_record_created": false,
   "doi": null,
-  "durable_sync_preparation": "payload_verified_before_sync_2026-09-15"
+  "release_authorized": false,
+  "durable_sync_preparation": "post_ws07_bounded_remediation_2026-09-17"
 }
