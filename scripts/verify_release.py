@@ -13,43 +13,58 @@ subprocess.run(
     check=True,
 )
 
-# Scientific/release guards.
-d = json.loads((ROOT / 'DATA_RELEASE_DECISION.json').read_text())
-assert d['raw_municipal_records']['included'] is False
-assert d['processed_record_level_derivatives']['included'] is False
-assert d['final_test_2024']['status'] == 'CLOSED'
-assert d['release_lock']['active'] is True
-assert d['release_lock']['tag_v1_0_0_created'] is False
-assert d['release_lock']['github_release_created'] is False
-assert d['release_lock']['zenodo_deposit_created'] is False
-assert d['release_lock']['doi_assigned'] is False
+# Scientific scope and data-availability boundaries.
+availability = json.loads((ROOT / 'DATA_AVAILABILITY.json').read_text())
+assert availability['raw_municipal_records']['included'] is False
+assert availability['processed_record_level_derivatives']['included'] is False
+assert availability['reviewed_aggregate_outputs']['included'] is True
+assert availability['final_test_2024']['status'] == 'CLOSED'
+assert availability['final_test_2024']['released_results'] is False
 
-b = json.loads((ROOT / 'provenance/RELEASE_SOURCE_BINDING.json').read_text())
-assert b['authoritative_english_pdf']['sha256'] == 'f0fa0f0bb8cf69a0729d0ec5a84499255357e3cbc9e96ab3af7b7c74263f4dab'
-assert b['science_lock']['science_changed'] is False
-assert b['science_lock']['final_test_2024'] == 'CLOSED'
-assert b['science_lock']['m8_results_consumed'] == 0
-assert b['science_lock']['m9_results_consumed'] == 0
-assert b['science_lock']['m10_results_consumed'] == 0
+# Stable public artifact identifiers.
+index = json.loads((ROOT / 'ARTIFACT_INDEX.json').read_text())
+artifacts = {a['id']: a for a in index['artifacts']}
+required_ids = {
+    'ART01-DATA-001', 'ART01-DATA-002', 'ART01-DATA-003', 'ART01-DATA-004',
+    'ART01-TBL-001', 'ART01-TBL-002', 'ART01-TBL-003',
+    'ART01-FIG-001', 'ART01-FIG-002', 'ART01-FIG-003',
+    'ART01-PROV-001', 'ART01-PROV-002',
+    'ART01-REPRO-001', 'ART01-REPRO-002', 'ART01-REPRO-003', 'ART01-REPRO-004',
+    'ART01-RIGHTS-001', 'ART01-RIGHTS-002',
+}
+assert required_ids.issubset(artifacts)
+assert len(artifacts) == len({a['id'] for a in index['artifacts']})
 
+# Public provenance and source metadata.
+provenance = json.loads((ROOT / 'PROVENANCE.json').read_text())
+assert provenance['integrity_manifest'] == 'SHA256SUMS.txt'
+assert provenance['generator'] == 'scripts/render_public_assets.py'
+assert provenance['artifacts']['ART01-DATA-003']['final_test_2024'] == 'CLOSED'
+assert provenance['artifacts']['ART01-DATA-004']['final_test_2024'] == 'CLOSED'
+
+source_manifest = json.loads((ROOT / 'SOURCE_MANIFEST.json').read_text())
+sources = {s['id']: s for s in source_manifest['sources']}
+assert sources['SRC-CDMX-001']['license_or_terms'] == 'CC-BY-4.0'
+assert sources['SRC-CHI-001']['license_or_terms'] == 'CITY_OF_CHICAGO_DATA_PORTAL_TERMS_OF_USE'
+assert sources['SRC-CHI-001']['open_license_identifier_asserted'] is False
+assert sources['SRC-LON-001']['license_or_terms'] == 'OGL-3.0'
+assert sources['SRC-ICCS-001']['license_or_terms'] == 'NO_REUSE_LICENSE_ASSERTED'
+assert sources['SRC-CDMX-001']['raw_data_redistributed'] is False
+assert sources['SRC-CHI-001']['raw_data_redistributed'] is False
+assert sources['SRC-LON-001']['raw_data_redistributed'] is False
+assert sources['SRC-ICCS-001']['raw_or_mapping_content_redistributed'] is False
+
+assert (ROOT / 'RIGHTS_AND_LICENSES.md').is_file()
+assert (ROOT / 'LICENSE-DATA-DOCS.md').is_file()
+assert (ROOT / 'REPRODUCIBILITY.md').is_file()
+assert (ROOT / 'PACKAGE_MANIFEST.json').is_file()
+
+# Published validation surface remains bounded to the same folds and excludes 2024.
 with (ROOT / 'tables/source/benchmark_macro_mae.csv').open(newline='') as f:
     rows = list(csv.DictReader(f))
 assert len(rows) == 35
 assert all(r['validation_folds'] == '2021;2022;2023' for r in rows)
 assert all(r['final_test_status'] == '2024 held out; not used' for r in rows)
-
-# Rights/licensing remediation guards.
-rights = (ROOT / 'LICENSE_AND_RIGHTS_AUDIT.md').read_text()
-assert 'REMEDIATED_PENDING_BOUNDED_R06_5_REAUDIT' in rights
-assert (ROOT / 'LICENSE-DATA-DOCS.md').is_file()
-acq = json.loads((ROOT / 'data_acquisition/SOURCE_ACQUISITION_MANIFEST.json').read_text())
-sources = {s['id']: s for s in acq['sources']}
-assert sources['cdmx_raw']['license_or_terms'] == 'CC-BY-4.0'
-assert sources['chicago_raw']['license_or_terms'] == 'CITY_OF_CHICAGO_DATA_PORTAL_TERMS_OF_USE'
-assert sources['chicago_raw']['license_identifier_asserted'] is False
-assert sources['london_raw']['license_or_terms'] == 'OGL-3.0'
-assert sources['iccs_mapping_catalog_private_snapshot']['license_or_terms'] == 'NO_REUSE_LICENSE_ASSERTED'
-assert all(s['redistributed'] is False for s in sources.values())
 
 # Allowlist and SHA-256 manifest must agree exactly, except that the checksum
 # file cannot checksum itself.
@@ -79,10 +94,13 @@ for rel, expected in manifest.items():
     actual = hashlib.sha256((ROOT / rel).read_bytes()).hexdigest()
     assert actual == expected, f'SHA-256 mismatch: {rel}'
 
-# CURRENT release surface hygiene.
-for forbidden in ('CITATION.cff', '.zenodo.json', 'results', 'mappings', 'splits'):
-    assert not (ROOT / forbidden).exists(), f'forbidden current-surface path present: {forbidden}'
-assert not any(ROOT.glob('.ws07_sync*'))
-assert not any(ROOT.rglob('.ws07_sync*'))
+# Public-facing package excludes incomplete citation metadata and publication-prep files.
+for forbidden in (
+    'CITATION.cff', '.zenodo.json', 'citation', 'release', 'data_acquisition', 'provenance',
+    'DATA_RELEASE_DECISION.json', 'LICENSE_AND_RIGHTS_AUDIT.md',
+    'PUBLIC_RELEASE_MANIFEST.json', 'REPRODUCIBILITY_README.md', 'figures/FIGURE_STATUS.json',
+    'results', 'mappings', 'splits',
+):
+    assert not (ROOT / forbidden).exists(), f'non-public package path present: {forbidden}'
 
-print('PASS bounded release-candidate verification including SHA-256 and rights remediation')
+print('PASS clean public ART-01 reproducibility package')
