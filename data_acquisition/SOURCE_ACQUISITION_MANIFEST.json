@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "snapshot_identity_audit_generated_utc": "2026-07-24T00:27:18.154780+00:00",
-  "rights_evidence_checked_utc": "2026-09-17T20:00:00Z",
+  "rights_evidence_checked_date": "2026-09-17",
   "rights_policy": {
     "raw_records_redistributed": false,
     "processed_record_level_derivatives_redistributed": false,
