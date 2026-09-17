@@ -8,5 +8,5 @@
     "figures/export/benchmark_workflow.svg",
     "figures/export/temporal_validation.svg"
   ],
-  "note": "SVG workflow/temporal exports are candidates only; reviewed inline manuscript figures are not replaced before independent equivalence audit."
+  "generator": "scripts/render_public_assets.py"
 }
