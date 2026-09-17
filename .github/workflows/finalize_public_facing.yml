@@ -1,0 +1,59 @@
+name: Finalize clean public-facing package
+on:
+  push:
+    branches: [release/art01-public-facing-r01]
+permissions:
+  contents: write
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Regenerate deterministic assets
+        run: python scripts/render_public_assets.py --write
+      - name: Check deterministic assets
+        run: python scripts/render_public_assets.py --check
+      - name: Regenerate checksum manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          : > SHA256SUMS.txt
+          while IFS= read -r p; do
+            [ -z "$p" ] && continue
+            [ "$p" = "SHA256SUMS.txt" ] && continue
+            test -f "$p"
+            sha256sum "$p" >> SHA256SUMS.txt
+          done < PUBLIC_ALLOWLIST.txt
+      - name: Verify checksums
+        run: sha256sum -c SHA256SUMS.txt
+      - name: Verify public package
+        run: python scripts/verify_release.py
+      - name: Check public terminology
+        shell: bash
+        run: |
+          set -euo pipefail
+          patterns='R06|WS-?0?7|SUPERA|scientific-review/|scientific-product/|governance/|github-actions|agent(s)?\b|\bgate(s)?\b|workstream'
+          if git grep -n -E -i "$patterns" -- . ':!/.github/**'; then
+            echo 'Forbidden internal terminology found in public package.'
+            exit 1
+          fi
+      - name: Confirm package paths equal allowlist plus temporary workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          git ls-files | grep -v '^.github/' | sort > /tmp/tracked.txt
+          sort PUBLIC_ALLOWLIST.txt > /tmp/allow.txt
+          diff -u /tmp/allow.txt /tmp/tracked.txt
+      - name: Commit manifest and remove temporary workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f .github/workflows/public_surface_hygiene_scan.yml
+          rm -f .github/workflows/finalize_public_facing.yml
+          git add -A
+          git commit -m 'Finalize clean ART-01 public package [skip ci]'
+          git push origin HEAD:release/art01-public-facing-r01
