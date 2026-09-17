@@ -1,0 +1,23 @@
+name: Public surface hygiene scan
+on:
+  push:
+    branches: [release/art01-public-facing-r01]
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Scan tracked public files for internal terminology
+        shell: bash
+        run: |
+          set -u
+          echo '=== INTERNAL TERMINOLOGY MATCHES ==='
+          patterns='R06|WS-?0?7|SUPERA|scientific-review/|scientific-product/|governance/|github-actions|agent(s)?\b|\bgate(s)?\b|workstream'
+          git grep -n -E -i "$patterns" -- . ':!/.github/workflows/public_surface_hygiene_scan.yml' || true
+          echo '=== END MATCHES ==='
+      - name: List current public-facing paths
+        run: git ls-files
