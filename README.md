@@ -1,6 +1,6 @@
 # Multi-city administrative crime-count forecasting benchmark
 
-This folder is a **release-candidate reconstruction** for the reviewed benchmark manuscript. It is not a published GitHub Release and has no DOI.
+This repository contains the public reproducibility package associated with the benchmark study **An Evidence-Traceable Multi-City Benchmark for Spatio-Temporal Administrative Crime Count Forecasting**.
 
 The benchmark predicts administrative `record_count` on complete predefined logical support. Eligible unit-period combinations without an observed administrative record are represented as structural zeros for this estimand; this does not assert that no real-world crime occurred.
 
@@ -8,8 +8,20 @@ Mexico City and Chicago daily families use local civic occurrence dates. London 
 
 Mandatory controls are zero, lag-1 persistence and seasonal naive. Evaluated learned comparators are Poisson GLM, NB2, Random Forest with Poisson criterion, and XGBoost with a count-Poisson objective. MAE is the primary metric and is interpreted within a benchmark family.
 
-Raw municipal records and processed record-level derivatives are not redistributed. The package is bounded to deterministic artifact-level regeneration and verification from reviewed aggregate inputs.
+## Public artifact identifiers
 
-Rights and licensing are intentionally split by artifact class. Software is covered by the root MIT `LICENSE`; repository-authored documentation/figures and the scoped treatment of aggregate outputs are described in `LICENSE-DATA-DOCS.md`; source-by-source permissions, attribution obligations, and exclusions are recorded in `LICENSE_AND_RIGHTS_AUDIT.md` and `data_acquisition/SOURCE_ACQUISITION_MANIFEST.json`. Repository licenses do not relicense third-party source data or UNODC ICCS content.
+`ARTIFACT_INDEX.json` assigns stable public identifiers to the principal datasets, tables, figures, provenance records, reproducibility tools and rights records used by the study. Identifiers follow the form `ART01-<CLASS>-<NNN>` and intentionally do not encode internal workstreams, review cycles, agents, local paths or implementation-only names.
 
-Planned archival version: `v1.0.0`. No tag, GitHub Release, Zenodo archive, DOI, publication date, volume or issue is asserted by this candidate. Release remains locked pending bounded R06.5 re-audit.
+These identifiers are designed to support direct manuscript-to-repository traceability. For example, `ART01-TBL-002` identifies the benchmark performance table and links it to its machine-readable source and public provenance record.
+
+## Reproducibility scope
+
+Raw municipal records and processed record-level derivatives are not redistributed. The package supports deterministic artifact-level regeneration and verification from reviewed aggregate inputs. See `REPRODUCIBILITY_README.md` for the exact verification commands and `SHA256SUMS.txt` for cryptographic integrity checks.
+
+## Rights and source attribution
+
+Software is covered by the root MIT `LICENSE`. Repository-authored documentation and figures, together with the scoped treatment of aggregate outputs, are described in `LICENSE-DATA-DOCS.md`. Source-by-source permissions, attribution obligations and exclusions are recorded in `LICENSE_AND_RIGHTS_AUDIT.md` and `data_acquisition/SOURCE_ACQUISITION_MANIFEST.json`. Repository licenses do not relicense third-party source data or UNODC ICCS content.
+
+## Archival status
+
+The repository package is prepared for an immutable archival release. A release tag, Zenodo archive and DOI have not yet been assigned. When an archival DOI exists, the repository and manuscript availability statement can be updated with that immutable identifier without changing the scientific results.
