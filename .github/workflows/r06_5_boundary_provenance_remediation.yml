@@ -1,0 +1,65 @@
+name: R06.5 boundary provenance remediation verification
+on:
+  push:
+    branches: [release/art01-public-facing-r01]
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Confirm bounded scientific delta
+        run: |
+          git diff --exit-code 29acf5d955fce97c99acf6058352eedc2e534077 --             tables figures/source figures/export scripts/render_public_assets.py
+      - name: Regenerate deterministic assets
+        run: python scripts/render_public_assets.py --write
+      - name: Check deterministic assets
+        run: python scripts/render_public_assets.py --check
+      - name: Regenerate checksum manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          : > SHA256SUMS.txt
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            [ "$f" = "SHA256SUMS.txt" ] && continue
+            sha256sum "$f" >> SHA256SUMS.txt
+          done < PUBLIC_ALLOWLIST.txt
+      - name: Verify checksums
+        run: sha256sum -c SHA256SUMS.txt
+      - name: Verify package
+        run: python scripts/verify_release.py
+      - name: Verify boundary provenance repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'SRC-CDMX-BOUNDARY-001' SOURCE_MANIFEST.json
+          grep -q 'SRC-CHI-BOUNDARY-001' SOURCE_MANIFEST.json
+          grep -q 'SRC-LON-BOUNDARY-001' SOURCE_MANIFEST.json
+          grep -q 'SRC-CDMX-BOUNDARY-001' PROVENANCE.json
+          grep -q 'SRC-CHI-BOUNDARY-001' PROVENANCE.json
+          grep -q 'SRC-LON-BOUNDARY-001' PROVENANCE.json
+          ! grep -q 'LICENSE_AND_RIGHTS_AUDIT.md' LICENSE-DATA-DOCS.md
+          ! grep -q 'data_acquisition/SOURCE_ACQUISITION_MANIFEST.json' LICENSE-DATA-DOCS.md
+      - name: Check public terminology and research firewall
+        shell: bash
+        run: |
+          set -euo pipefail
+          patterns='SUPERA|WS-?0?7|scientific-review/|scientific-product/|governance/|M8|M9|M10|negative.transfer|transfer.learning'
+          ! git grep -n -E -i "$patterns" --             README.md ARTIFACT_INDEX.json DATA_AVAILABILITY.json PACKAGE_MANIFEST.json             PROVENANCE.json SOURCE_MANIFEST.json RIGHTS_AND_LICENSES.md LICENSE-DATA-DOCS.md             REPRODUCIBILITY.md tables figures scripts ':!scripts/verify_release.py'
+      - name: Commit refreshed integrity manifest and remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/r06_5_boundary_provenance_remediation.yml
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "R06.5 remediation: finalize boundary rights and provenance [skip ci]"
+          git push
