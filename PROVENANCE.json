@@ -7,26 +7,70 @@
   "artifacts": {
     "ART01-DATA-001": {
       "path": "tables/source/data_coverage.csv",
-      "source_ids": ["SRC-CDMX-001", "SRC-CHI-001", "SRC-LON-001", "SRC-ICCS-001"],
-      "generated_outputs": ["tables/export/tab_art01_data_coverage.tex"]
+      "source_ids": [
+        "SRC-CDMX-001",
+        "SRC-CHI-001",
+        "SRC-LON-001",
+        "SRC-ICCS-001",
+        "SRC-CDMX-BOUNDARY-001",
+        "SRC-CHI-BOUNDARY-001",
+        "SRC-LON-BOUNDARY-001"
+      ],
+      "generated_outputs": [
+        "tables/export/tab_art01_data_coverage.tex"
+      ]
     },
     "ART01-DATA-002": {
       "path": "tables/source/h3_boundary_support.csv",
-      "source_ids": ["SRC-CDMX-001", "SRC-CHI-001", "SRC-LON-001"],
-      "generated_outputs": ["figures/export/h3_boundary_support.svg"]
+      "source_ids": [
+        "SRC-CDMX-BOUNDARY-001",
+        "SRC-CHI-BOUNDARY-001",
+        "SRC-LON-BOUNDARY-001"
+      ],
+      "generated_outputs": [
+        "figures/export/h3_boundary_support.svg"
+      ]
     },
     "ART01-DATA-003": {
       "path": "tables/source/benchmark_macro_mae.csv",
-      "source_ids": ["SRC-CDMX-001", "SRC-CHI-001", "SRC-LON-001", "SRC-ICCS-001"],
-      "generated_outputs": ["tables/export/tab_art01_benchmark.tex"],
-      "validation_folds": [2021, 2022, 2023],
+      "source_ids": [
+        "SRC-CDMX-001",
+        "SRC-CHI-001",
+        "SRC-LON-001",
+        "SRC-ICCS-001",
+        "SRC-CDMX-BOUNDARY-001",
+        "SRC-CHI-BOUNDARY-001",
+        "SRC-LON-BOUNDARY-001"
+      ],
+      "generated_outputs": [
+        "tables/export/tab_art01_benchmark.tex"
+      ],
+      "validation_folds": [
+        2021,
+        2022,
+        2023
+      ],
       "final_test_2024": "CLOSED"
     },
     "ART01-DATA-004": {
       "path": "tables/source/local_performance.csv",
-      "source_ids": ["SRC-CDMX-001", "SRC-CHI-001", "SRC-LON-001", "SRC-ICCS-001"],
-      "generated_outputs": ["tables/export/tab_art01_local_performance.tex"],
-      "validation_folds": [2021, 2022, 2023],
+      "source_ids": [
+        "SRC-CDMX-001",
+        "SRC-CHI-001",
+        "SRC-LON-001",
+        "SRC-ICCS-001",
+        "SRC-CDMX-BOUNDARY-001",
+        "SRC-CHI-BOUNDARY-001",
+        "SRC-LON-BOUNDARY-001"
+      ],
+      "generated_outputs": [
+        "tables/export/tab_art01_local_performance.tex"
+      ],
+      "validation_folds": [
+        2021,
+        2022,
+        2023
+      ],
       "final_test_2024": "CLOSED"
     },
     "ART01-FIG-001": {
@@ -40,7 +84,12 @@
     },
     "ART01-FIG-003": {
       "source": "tables/source/h3_boundary_support.csv",
-      "generated": "figures/export/h3_boundary_support.svg"
+      "generated": "figures/export/h3_boundary_support.svg",
+      "source_ids": [
+        "SRC-CDMX-BOUNDARY-001",
+        "SRC-CHI-BOUNDARY-001",
+        "SRC-LON-BOUNDARY-001"
+      ]
     }
   }
 }
