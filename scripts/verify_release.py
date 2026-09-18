@@ -49,10 +49,32 @@ assert sources['SRC-CHI-001']['license_or_terms'] == 'CITY_OF_CHICAGO_DATA_PORTA
 assert sources['SRC-CHI-001']['open_license_identifier_asserted'] is False
 assert sources['SRC-LON-001']['license_or_terms'] == 'OGL-3.0'
 assert sources['SRC-ICCS-001']['license_or_terms'] == 'NO_REUSE_LICENSE_ASSERTED'
+assert sources['SRC-CDMX-BOUNDARY-001']['license_or_terms'] == 'TERMINOS_DE_LIBRE_USO_DE_LA_INFORMACION_DEL_INEGI'
+assert sources['SRC-CHI-BOUNDARY-001']['license_or_terms'] == 'CITY_OF_CHICAGO_DATA_TERMS_OF_USE'
+assert sources['SRC-CHI-BOUNDARY-001']['open_license_identifier_asserted'] is False
+assert sources['SRC-LON-BOUNDARY-001']['license_or_terms'] == 'OPEN_GOVERNMENT_LICENCE_AND_ORDNANCE_SURVEY_OPENDATA_LICENCE'
 assert sources['SRC-CDMX-001']['raw_data_redistributed'] is False
 assert sources['SRC-CHI-001']['raw_data_redistributed'] is False
 assert sources['SRC-LON-001']['raw_data_redistributed'] is False
 assert sources['SRC-ICCS-001']['raw_or_mapping_content_redistributed'] is False
+for boundary_id in ('SRC-CDMX-BOUNDARY-001', 'SRC-CHI-BOUNDARY-001', 'SRC-LON-BOUNDARY-001'):
+    assert sources[boundary_id]['raw_boundary_redistributed'] is False
+    assert sources[boundary_id]['canonical_boundary_redistributed'] is False
+    assert len(sources[boundary_id]['source_snapshot_sha256']) == 64
+    assert len(sources[boundary_id]['canonical_boundary_sha256']) == 64
+
+boundary_ids = {'SRC-CDMX-BOUNDARY-001', 'SRC-CHI-BOUNDARY-001', 'SRC-LON-BOUNDARY-001'}
+assert set(provenance['artifacts']['ART01-DATA-002']['source_ids']) == boundary_ids
+assert boundary_ids.issubset(set(provenance['artifacts']['ART01-DATA-001']['source_ids']))
+assert boundary_ids.issubset(set(provenance['artifacts']['ART01-DATA-003']['source_ids']))
+assert boundary_ids.issubset(set(provenance['artifacts']['ART01-DATA-004']['source_ids']))
+assert set(provenance['artifacts']['ART01-FIG-003']['source_ids']) == boundary_ids
+
+license_docs = (ROOT / 'LICENSE-DATA-DOCS.md').read_text()
+assert 'RIGHTS_AND_LICENSES.md' in license_docs
+assert 'SOURCE_MANIFEST.json' in license_docs
+assert 'LICENSE_AND_RIGHTS_AUDIT.md' not in license_docs
+assert 'data_acquisition/SOURCE_ACQUISITION_MANIFEST.json' not in license_docs
 
 assert (ROOT / 'RIGHTS_AND_LICENSES.md').is_file()
 assert (ROOT / 'LICENSE-DATA-DOCS.md').is_file()
